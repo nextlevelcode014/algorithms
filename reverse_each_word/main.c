@@ -24,7 +24,7 @@ void reverse_each_word(char *s) {
     }
 }
 
-int main() {
+int main(void) {
     char s[] = "Let's take LeetCode contest";
     reverse_each_word(s);
     printf("%s\n", s); // s'teL ekat edoCteeL tsetnoc
