@@ -4,19 +4,18 @@
 int maxSubstringWithAtMostTwoOccurrences(const char* s) {
     int count[26] = {0};  // Contador de ocorrências
     int maxLen = 0;
-    int start = 0;
-    int n = strlen(s);
+    int left = 0;
+    int slen = strlen(s);
 
-    for (int end = 0; end < n; end++) {
-        count[s[end] - 'a']++;
+    for (int right = 0; right < slen; right++) {
+        count[s[right] - 'a']++;
 
-        // Enquanto algum caractere aparecer mais de 2 vezes, encolhe a janela
-        while (count[s[end] - 'a'] > 2) {
-            count[s[start] - 'a']--;
-            start++;
+        while (count[s[right] - 'a'] > 2) {
+            count[s[left] - 'a']--;
+            left++;
         }
 
-        int windowLen = end - start + 1;
+        int windowLen = right - left + 1;
         if (windowLen > maxLen) {
             maxLen = windowLen;
         }
@@ -24,11 +23,11 @@ int maxSubstringWithAtMostTwoOccurrences(const char* s) {
 
     return maxLen;
 }
+        // Enquanto algum caractere aparecer mais de 2 vezes, encolhe a janela
 
 int main(void) {
-  char *s = "bcbbbcba";
+  char *s = "babaacf";
   int result = maxSubstringWithAtMostTwoOccurrences(s);
-  printf("%zu", sizeof(3));
   printf("result: %d", result);
   return 0;
 }
