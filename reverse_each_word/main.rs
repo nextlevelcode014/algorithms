@@ -36,7 +36,7 @@ fn reverse_each_word_in_string(s: String) -> String {
         }
     }
 
-    chars.into_iter().collect() 
+    chars.into_iter().collect()
 }
 
 fn reverse_each_word(s: &str) -> String {
@@ -62,7 +62,4 @@ fn reverse_each_word(s: &str) -> String {
     result
 }
 
-fn main() {
-}
-
-
+fn main() {}
